@@ -8,6 +8,7 @@ function Nav() {
         <li><Link to="/add">Add Products</Link></li>
         <li><Link to="/update">User Products</Link></li>
         <li><Link to="/logout">Logout</Link></li>
+        <li><Link to="/signin">SingIn</Link></li>
         <li><Link to="/profile">Profile</Link></li>
               
           </ul>      
