@@ -1,19 +1,52 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function SignIn() {
  
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
 
-    const handleClick = () => {
-        console.log(name,email,password)
+ 
+
+    useEffect(() => {
+        const auth = localStorage.getItem('user');
+        if (auth) {
+            navigate('/');
+        }
+    })
+
+
+
+    const handleClick =async () => {
+        
+
+
+        const userInfo = { name: name, email: email, password: password };
+    
+
+        let result = await fetch("http://localhost:7000/register", {
+            method: "post",
+            body: JSON.stringify(userInfo),
+            headers: {
+                'Content-Type': "application/json"
+            }
+        });
+
+        result = await result.json();
+
+        localStorage.setItem('user', JSON.stringify(result));
+
+        navigate("/");
+
+
     }
 
   return (
       <div>
-          <h1 className='register-header'>Register</h1>
+          <h2 className='register-header'>Please Open Register</h2>
           <div className='register-box'>
         <input className='inputBox' value={name} onChange={(e)=>setName(e.target.value)} type="text" placeholder='Enter Name'></input>
           <input className='inputBox' value={email} onChange={(e)=>setEmail(e.target.value)} type="text" placeholder="Enter Eamil"></input>
