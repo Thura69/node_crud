@@ -7,6 +7,8 @@ import Footer from './Footer';
 import PrivateComponent from './components/PrivateComponent';
 import Login from './Login';
 import AddProduct from './AddProduct';
+import Products from './Products';
+import UpdateProduct from './UpdateProduct';
 
 
 function App() {
@@ -17,11 +19,11 @@ function App() {
               <h1 className='header-name'>Ecommerce DashBoard</h1>
               <Routes>
                   <Route  element={<PrivateComponent/>}>
-                   <Route path='/' element={<h1>home</h1>}></Route> 
+                   <Route path='/' element={<Products/>}></Route> 
                   <Route path='/add' element={<AddProduct/>}></Route>    
-                  <Route path='/update' element={<h1>update</h1>}></Route>    
+                  <Route path='/update/:id' element={<UpdateProduct/>}></Route>    
                   <Route path='/logout' element={<h1>logout</h1>}></Route> 
-                  <Route path='/profile' element={<h1>profile</h1>}></Route> 
+
                   </Route>   
                   <Route path='/signin' element={<SignIn />}></Route>
                    <Route path='/login' element={<Login/>}></Route>

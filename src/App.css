@@ -113,3 +113,73 @@ outline: none;
   60% {
     transform: translate3d(2px, 0, 0);
   }}
+
+  .invalid-input{
+    color:black;
+    border:1px dashed black;
+    padding:5px 15px;
+    font-size:15px;
+  }
+
+  .add-box{
+    text-align: center;
+  }
+
+  .register-box-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .product-lists {
+    text-align: center;
+    margin-top: 50px;
+  }
+  .product-lists ul{
+    margin: 0 ;
+  }
+  .product-lists ul li{
+  display: inline-block;
+  border:1px solid black;
+  padding:5px;
+  width: 150px;
+  }
+  .btn-delete{
+    border:1px solid black;
+    cursor: pointer;
+    background-color: black;
+    color:white;
+    padding: 0;
+    border-radius: 0.5rem;
+    font-size:13px;
+
+  }
+   .btn-delete:hover {
+        animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+        transform: translate3d(0, 0, 0);
+        perspective: 1000px;
+      }
+.add-new{
+}
+.add-new-box{
+  margin-top: 4rem;
+  text-align: center;
+}
+.update-one{
+margin-left: 5px;
+font-size: 13px;
+}
+.update-one:hover{
+   font-size: 14px;
+    transition: all 0.3s ease-out;
+    background-color: white;
+    border-radius: 0;
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+   
+  text-decoration: underline;
+}
