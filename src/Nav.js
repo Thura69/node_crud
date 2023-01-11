@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 function Nav() {
@@ -9,16 +10,25 @@ function Nav() {
     navigate('/signup')
   }
   return (
-      <div>
-          <ul className='header-ul'>
+    <div>
+      {
+        auth?  <ul className='header-ul'>
         <li><Link to="/">Products</Link></li>
         <li><Link to="/add">Add Products</Link></li>
-        <li><Link to="/update">User Products</Link></li>
-       
-        <li>{auth?<Link onClick={logOut} to="/signin">Logout</Link>:<Link to="/signin">SingIn</Link>}</li>
-        <li><Link to="/profile">Profile</Link></li>
-              
-          </ul>      
+        <li><Link to="/update">Update Products</Link></li>
+          <li><Link to="/profile">Profile</Link></li>
+          <li><Link onClick={logOut} to="/signin">LogOut ( {JSON.parse(auth).name} )</Link></li>
+        
+        </ul>
+          
+          :
+          <ul className='header-ul'>
+           <li><Link to="/signin">SingIn</Link></li>
+            <li><Link to="/login">Login</Link></li>
+        </ul>
+      }
+         
+         
     </div>
   )
 }
